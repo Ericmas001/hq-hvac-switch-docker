@@ -7,7 +7,7 @@ ENV OFF=16
 ENV URL=PROVIDE_ME
 ENV KEY=PROVIDE_ME
 
-VOLUME /logs /config/ /pics
+VOLUME /config/
 
 RUN apt-get update
 RUN apt-get install \
@@ -23,7 +23,6 @@ RUN pip install --upgrade wheel
 RUN pip install pip-upgrade-outdated
 RUN pip_upgrade_outdated
 
-RUN echo "Test1"
 ADD entrypoint.sh /entrypoint.sh
 COPY exec/*.py /exec/
 
